@@ -62,7 +62,7 @@ const ProductList = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center p-10 m-10">
+      {/* <div className="flex items-center p-10 m-10 border"> */}
         {
           <ProductCard
             allProducts={allProducts}
@@ -71,7 +71,7 @@ const ProductList = () => {
             errorFetch={errorFetch}
           ></ProductCard>
         }
-      </div>
+      {/* </div> */}
     </div>
   );
 };
