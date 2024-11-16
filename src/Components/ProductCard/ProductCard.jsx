@@ -34,14 +34,14 @@ const ProductCard = ({ allProducts, search, loading,errorFetch }) => {
   // console.log(allProducts);
   // console.log(filterProduct);
   return (
-    <div className="card bg-base-200 w-96 shadow-xl flex flex-col-3">
+    <div className="w-fit">
       {filterProduct.length > 0 ? (
-        <div className="product-list">
+        <div className="product-list flex flex-wrap gap-4">
           {filterProduct.map((item) => (
-            <div key={item.id} className="card-body flex flex-grow">
+            <div key={item.id} className="card-body max-w-[23%] flex flex-grow border">
               <img
                 src={item.image}
-                className="w-full h-[400px] rounded-lg"
+                className="h-[400px] rounded-lg"
                 alt={item.title}
               />
               <h2 className="text-start text-xl font-semibold">
