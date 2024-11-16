@@ -4,18 +4,18 @@ const ProductCard = ({ allProducts, search, loading,errorFetch }) => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [filterProduct, setFilterProduct] = useState([]);
-
+  //console.log(allProducts);
   const handleViewDetails = (id) => {
     const selected = allProducts.find((product) => product.id === id);
     setSelectedProduct(selected);
     setIsModalOpen(true);
   };
-
+console.log(search);
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setSelectedProduct(null);
   };
-  console.log(errorFetch);
+  //console.log(errorFetch);
   useEffect(() => {
     if(errorFetch){
      setFilterProduct([])

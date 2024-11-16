@@ -2,29 +2,35 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useDebounce from "../CustomDebounce/useDebounceHook";
 const ProductList = () => {
   const [allProducts, setAllProducts] = useState([]);
   const [search, setSearch] = useState(" ");
   const [loading, setLoading] = useState(true);
   const [errorFetch,setErrorFetch] = useState(false);
   const notify = () => toast("Opps! Fetch Data doesn't found.");
+  const debounceVlaue =  useDebounce(search,3000);
+  //  console.log(debounceVlaue);
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/")
+    fetch("https://dummyjson.com/products")
       .then((res) => res.json())
-      .then((data) => setAllProducts(data));
+      .then((data) => setAllProducts(data.products));
     setLoading(false);
   }, []);
-  // console.log(allProducts);
+  
+ //  console.log(allProducts);
   const handleInputValue = (e) => {
     setSearch(e.target.value);
+   
+
   };
+ 
   const handleErrorFetch = () => {
     fetch("")
       .then((res) => res.json())
       .then((data) => setAllProducts(data))
       .catch((error) => {
         setErrorFetch(true)
-        // error('Error fetching data: ' + error.message);
         notify();
 
       });
@@ -66,7 +72,7 @@ const ProductList = () => {
         {
           <ProductCard
             allProducts={allProducts}
-            search={search}
+            search={debounceVlaue}
             loading={loading}
             errorFetch={errorFetch}
           ></ProductCard>
