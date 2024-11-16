@@ -38,7 +38,7 @@ console.log(search);
       {filterProduct.length > 0 ? (
         <div className="product-list flex flex-wrap gap-4">
           {filterProduct.map((item) => (
-            <div key={item.id} className="card-body  flex flex-grow border">
+            <div key={item.id} className="card-body  flex flex-grow border shadow-md rounded-lg">
               <img
                 src={image}
                 className="h-[400px] rounded-lg"
