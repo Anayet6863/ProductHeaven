@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import image from '../../assets/tshirt.webp'
 const ProductCard = ({ allProducts, search, loading,errorFetch }) => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -38,9 +38,9 @@ console.log(search);
       {filterProduct.length > 0 ? (
         <div className="product-list flex flex-wrap gap-4">
           {filterProduct.map((item) => (
-            <div key={item.id} className="card-body max-w-[23%] flex flex-grow border">
+            <div key={item.id} className="card-body  flex flex-grow border">
               <img
-                src={item.image}
+                src={image}
                 className="h-[400px] rounded-lg"
                 alt={item.title}
               />
@@ -106,7 +106,7 @@ console.log(search);
         <dialog id="my_modal_1" className="modal" open>
           <div className="modal-box">
             <img
-              src={selectedProduct.image}
+              src={image}
               alt={selectedProduct.title}
               className="w-full h-[400px] rounded-md"
             />

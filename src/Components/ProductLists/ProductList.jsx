@@ -9,7 +9,7 @@ const ProductList = () => {
   const [loading, setLoading] = useState(true);
   const [errorFetch,setErrorFetch] = useState(false);
   const notify = () => toast("Opps! Fetch Data doesn't found.");
-  const debounceVlaue =  useDebounce(search,3000);
+  const debounceVlaue =  useDebounce(search,300);
   //  console.log(debounceVlaue);
   useEffect(() => {
     fetch("https://dummyjson.com/products")
