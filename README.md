@@ -2,7 +2,10 @@
 # Project Name: Product Heaven
 
 
-
+### Technology
+- Html
+- Tailwind css
+- Java Script
 
 
 
