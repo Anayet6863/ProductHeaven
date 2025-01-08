@@ -6,6 +6,7 @@
 - Html
 - Tailwind css
 - Java Script
+- React
 
 
 
